@@ -3,8 +3,9 @@ import App from './App.vue';
 
 // import Vuex store
 import {store} from './store/store.js';
-import {ImagesMixin} from './ImagesMixin.js';
 
+// import gulp-generated image data
+import {ImagesMixin} from './ImagesMixin.js';
 
 Vue.filter('fixName', (value) => {
   return value.split(".")[0].replace('-', ' ');

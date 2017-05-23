@@ -1,25 +1,45 @@
 <template>
   <!-- v-drop uses a function prop as callback because directives don't allow for proper `this` handling -->
-  <div v-drop="addSelectedFn" class="row cart">
+  <div v-drop="addSelected" class="row cart">
     <appCartHeader></appCartHeader>
 
-    <slot></slot>
+    <div class="cart__item"
+      @dblclick="removeSelectedItem(index)"
+      v-for="(item, index) in getAllSelectedItems"
+      :key="index">
+        <strong>{{item.name | fixName}}</strong><em>{{item.price | addCents}}</em>
+      </div>
 
+    <div class="cart__total">Total: {{totalSale | addCents}}</div>
+
+    <slot></slot>
     <appCartFooter></appCartFooter>
   </div>
 </template>
 
 <script>
+import _ from 'lodash';
 import $ from 'jquery';
 import "jquery-ui/ui/widgets/droppable"; // this works directly, but need to include each widget separately
+
+import {mapGetters, mapActions} from 'vuex';
 
 import CartHeader from './CartHeader.vue';
 import CartFooter from './CartFooter.vue';
 
 export default {
-  props: {
-    addSelectedFn: Function
+  methods: {
+    ...mapActions(['addSelectedItem','removeSelectedItem']),
+    addSelected(item){
+      if (this.getSelectedItemLength < 10) {
+        // this.selectedItems.push(this.$store.state.pricedArray[item]);
+        this.addSelectedItem(item);
+      } else {
+        alert('Too many things!');
+      }
+    }
   },
+  computed: mapGetters(['getAllSelectedItems','totalSale','getSelectedItemLength']),
   components: {
     appCartHeader: CartHeader,
     appCartFooter: CartFooter
