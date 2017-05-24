@@ -22,6 +22,12 @@ In an older version of this shopping cart, items could have a random colour. The
 # install dependencies
 npm install
 
+# Add some images to the `images` folder.
+# each image should be its name with hyphens.
+# ie. `my-supar-sellable-thing.jpg`
+
+# Change `src/assets/logo.png` file to your store logo.
+
 # serve with hot reload at localhost:8080
 npm run dev
 
