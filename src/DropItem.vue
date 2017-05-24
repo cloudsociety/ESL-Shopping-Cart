@@ -1,6 +1,6 @@
 <template>
   <!-- v-drop uses a function prop as callback because directives don't allow for proper `this` handling -->
-  <div v-drop="addSelected" class="row cart">
+  <div v-drop="addSelected" class="row cart" :class="{'full-cart':cartIsFull}">
     <appCartHeader></appCartHeader>
 
     <div class="cart__item"
@@ -31,15 +31,19 @@ export default {
   methods: {
     ...mapActions(['addSelectedItem','removeSelectedItem']),
     addSelected(item){
-      if (this.getSelectedItemLength < 10) {
-        // this.selectedItems.push(this.$store.state.pricedArray[item]);
-        this.addSelectedItem(item);
-      } else {
+      if (this.cartIsFull) {
         alert('Too many things!');
+      } else {
+        this.addSelectedItem(item);
       }
     }
   },
-  computed: mapGetters(['getAllSelectedItems','totalSale','getSelectedItemLength']),
+  computed: {
+    ...mapGetters(['getAllSelectedItems','totalSale','getSelectedItemLength']),
+    cartIsFull(){
+      return !(this.getSelectedItemLength < 10);
+    }
+  },
   components: {
     appCartHeader: CartHeader,
     appCartFooter: CartFooter
@@ -94,6 +98,9 @@ export default {
     }
     &.drop-here {
       background-color: #999;
+    }
+    &.full-cart, &.drop-here.full-cart {
+      background-color: tomato;
     }
   }
 </style>

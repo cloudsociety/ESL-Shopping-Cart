@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="row items">
+  <div>
+    <div class="shelf">
       <appDragItem v-for="(image, index) in getAllPricedItems"
           :image="image"
           :key="index"></appDragItem>
@@ -36,7 +36,7 @@ export default {
     padding:0;
     font: 13px/1.5 helvetica, arial, san-serif;
   }
-  .items {
+  .shelf {
     position: absolute;top: 0;right: 30%;bottom: 0;left: 0;
     z-index: 10;
   }

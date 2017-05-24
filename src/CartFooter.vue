@@ -1,5 +1,5 @@
 <template>
-  <h3>Thank you for shopping at<br /><strong>Linda's Store!</strong></h3>
+  <h3 class="cart__footer">Thank you for shopping at<br /><strong>The Store!</strong></h3>
 </template>
 
 <script>
@@ -13,7 +13,7 @@
 </script>
 
 <style lang="scss">
-h3 {
+.cart__footer {
   color:#333;
   position:absolute;bottom: 0;left: 0;
   text-align: center;

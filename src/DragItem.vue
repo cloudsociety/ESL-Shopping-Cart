@@ -1,8 +1,8 @@
 <template>
-  <figure v-drag :data-image-name="image.name">
+  <figure v-drag :data-image-name="image.name" class="shelfitem">
     <!-- add v-colorize to img if random colour is desired -->
-    <img :style="{backgroundColor:bgColor.cssName}" :src="image.src" alt="">
-    <figcaption><strong>{{bgColor.displayName}} {{image.name | fixName}}</strong><em>{{image.price | addCents}}</em></figcaption>
+    <img :style="{backgroundColor:bgColor.cssName}" :src="image.src" alt="" class="shelfitem__image">
+    <figcaption class="shelfitem__description"><strong>{{bgColor.displayName}} {{image.name | fixName}}</strong><em>{{image.price | addCents}}</em></figcaption>
   </figure>
 </template>
 
@@ -66,28 +66,31 @@ import "jquery-ui/ui/widgets/draggable"; // this works directly, but need to inc
 </script>
 
 <style lang="scss">
-figure {
+.shelfitem {
   display: inline-block;
   margin: 10px;
   position: relative;
   width: 150px; height: 150px;
-}
-img {
-  border: 3px solid #999;
-  border-radius: 10px;
-  max-width: 150px;
-}
-figcaption {
-  background-color: rgba(0,0,0,.4);
-  border: 3px solid #999;
-  border-top: 0;
-  border-radius: 0 0 10px 10px;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  position: absolute; left: 0;right: 0;bottom: 0;
-  padding: 5px;
-  text-shadow: 1px 1px 1px #000;
-  text-transform: capitalize;
+
+  &__image {
+    border: 3px solid #999;
+    border-radius: 10px;
+    width: 150px;height: 150px;
+    object-fit: cover;
+  }
+
+  &__description {
+    background-color: rgba(0,0,0,.4);
+    border: 3px solid #999;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: absolute; left: 0;right: 0;bottom: 0;
+    padding: 5px;
+    text-shadow: 1px 1px 1px #000;
+    text-transform: capitalize;
+  }
 }
 </style>

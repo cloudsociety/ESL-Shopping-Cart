@@ -1,5 +1,7 @@
 <template>
-  <h1>Cart Header</h1>
+  <h1 class="cart__header">
+    <img src="./assets/logo.png">
+  </h1>
 </template>
 
 <script>
@@ -13,8 +15,11 @@
 </script>
 
 <style lang="scss">
-h1 {
+.cart__header {
   text-align:center;
-  // margin-bottom: 0;
+
+  & img {
+    max-height: 100px;
+  }
 }
 </style>
