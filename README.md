@@ -28,9 +28,10 @@ In an older version of this shopping cart, items could have a random colour. The
 # install dependencies
 npm install
 
-# Add some images to the `images` folder.
+# Add some images to the `images` folder. (sample images from placehold.it)
 # each image should be its name with hyphens.
 # ie. `my-supar-sellable-thing.jpg`
+npm run imgjson
 
 # Change `src/assets/logo.png` file to your store logo.
 
