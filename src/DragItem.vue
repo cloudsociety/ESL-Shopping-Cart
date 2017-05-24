@@ -9,6 +9,7 @@
 <script>
 import $ from 'jquery';
 import "jquery-ui/ui/widgets/draggable"; // this works directly, but need to include each widget separately
+import "jquery-ui-touch-punch-c/jquery.ui.touch-punch.min.js";
 
   export default {
     data: function() {

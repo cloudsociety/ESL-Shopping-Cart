@@ -12,6 +12,7 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
+    "jquery-ui-touch-punch-c": "^1.4.0",
     "lodash": "^4.17.4",
     "vue": "^2.2.1",
     "vuex": "^2.3.1"
