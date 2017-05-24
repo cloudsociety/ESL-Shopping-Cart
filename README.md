@@ -6,6 +6,12 @@ Based on a [very old drag&drop Tutsplus tutorial][tutsplus].
 
 ESL learners can practice buying and selling. Use your favorite sentence structures and images. **Works great on interactive whiteboards.**
 
+## How to use
+
+After adding images and building the app, open `index.html`. Images can be dragged into the cart/receipt (on the right). Maximum 10 items in the cart.
+
+Remove item from cart by double-clicking the item. (doesn't work on touch screens yet)
+
 ## Ideas
  * Restaurant: "I'd like some spaghetti, please."
  * Toy store: "Can I have a dinosaur, please?"
