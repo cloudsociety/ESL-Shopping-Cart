@@ -1,6 +1,8 @@
-# shopping-cart
+# Shopping Cart
 
 > A Vue-based shopping cart for ESL learners.
+
+![](demo-shopping-cart.gif)
 
 Based on a [very old drag&drop Tutsplus tutorial][tutsplus].
 
